@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./Components/Header/Header";
 import Home from "./Container/Home/Home";
 import Footer from "./Components/Footer/Footer";
-import { BrowserRouter as Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Departments from "./Container/Deparments/Departments";
 import Doctor from "./Container/Doctor/Doctor";
 import About from "./Container/About/About";
