@@ -29,19 +29,22 @@ function Header(props) {
           <nav id="navbar" className="navbar order-last order-lg-0">
             <ul>
               <li>
-                <NavLink className="nav-link scrollto active" to={"/"} >Home</NavLink>
+                <NavLink exact className="nav-link scrollto" to={"/"} >Home</NavLink>
               </li>
               <li>
-                <NavLink className="nav-link scrollto" to={"/department"}>Departments</NavLink>
+                <NavLink exact className="nav-link scrollto" to={"/department"}>Departments</NavLink>
               </li>
               <li>
-                <NavLink className="nav-link scrollto" to={"/doctor"}>Doctors</NavLink>
+                <NavLink exact className="nav-link scrollto" to={"/medicines"}>Medicines</NavLink>
               </li>
               <li>
-                <NavLink className="nav-link scrollto " to={"/about"}>About</NavLink>
+                <NavLink exact className="nav-link scrollto" to={"/doctor"}>Doctors</NavLink>
               </li>
               <li>
-                <NavLink className="nav-link scrollto" to={"/contact"}>Contact</NavLink>
+                <NavLink exact className="nav-link scrollto " to={"/about"}>About</NavLink>
+              </li>
+              <li>
+                <NavLink exact className="nav-link scrollto" to={"/contact"}>Contact</NavLink>
               </li>
             </ul>
             <i className="bi bi-list mobile-nav-toggle" />
@@ -53,7 +56,7 @@ function Header(props) {
           </a> */}
 
 
-          <NavLink className="appointment-btn scrollto" to={"/form"}>
+          <NavLink exact className="appointment-btn scrollto" to={"/form"}>
             <span className="d-none d-md-inline">Login/ Signup</span>
           </NavLink>
         </div>

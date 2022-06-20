@@ -1120,10 +1120,10 @@ section {
   color: #FF6337;
 }
 
-.departments .nav-link.active {
+/* .departments .nav-link.active {
   color: #FF6337;
   border-color: #FF6337;
-}
+} */
 
 .departments .tab-pane.active {
   -webkit-animation: fadeIn 0.5s ease-out;
