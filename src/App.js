@@ -9,6 +9,7 @@ import About from "./Container/About/About";
 import Contact from "./Container/Contact/Contact";
 import FormL from "./Container/Form/FormL";
 import Medicines from "./Container/Medicines/Medicines";
+import Appoinment from "./Container/Appoinment/Appoinment";
 function App() {
   return (
     <>
@@ -20,6 +21,7 @@ function App() {
         <Route path={"/doctor"} exact component={Doctor} />
         <Route path={"/about"} exact component={About} />
         <Route path={"/contact"} exact component={Contact} />
+        <Route path={"/appointment"} exact component={Appoinment} />
         <Route path={"/form"} exact component={FormL} />
         <Route path={"/medicines"} exact component={Medicines} />
       </Switch>
