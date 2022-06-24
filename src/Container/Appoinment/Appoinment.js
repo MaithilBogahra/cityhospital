@@ -10,7 +10,7 @@ function Appoinment(props) {
         phone: yup.number().required().positive().integer(),
         department: yup.string().required(),
         message: yup.string().required(),
-        date: yup.date().required().default(function () {
+        date: yup.date().required("Enter valid date").default(function () {
             return new Date().toLocaleDateString();
         }),
     });

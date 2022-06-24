@@ -9,7 +9,7 @@ function Contact(props) {
     email: yup.string().email().required(),
     subject: yup.string().required(),
     message: yup.string().required(),
-    
+
   });
 
   const formik = useFormik({

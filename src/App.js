@@ -4,12 +4,15 @@ import Home from "./Container/Home/Home";
 import Footer from "./Components/Footer/Footer";
 import { Switch, Route } from "react-router-dom";
 import Departments from "./Container/Deparments/Departments";
-import Doctor from "./Container/Doctor/Doctor";
+
 import About from "./Container/About/About";
 import Contact from "./Container/Contact/Contact";
 import FormL from "./Container/Form/FormL";
 import Medicines from "./Container/Medicines/Medicines";
 import Appoinment from "./Container/Appoinment/Appoinment";
+import Doctor from "./Container/Doctor/Doctor";
+import Refexample from "./Container/Refexample/RefExample";
+
 function App() {
   return (
     <>
@@ -21,6 +24,7 @@ function App() {
         <Route path={"/doctor"} exact component={Doctor} />
         <Route path={"/about"} exact component={About} />
         <Route path={"/contact"} exact component={Contact} />
+        <Route path={"/refexample"} exact component={Refexample} />
         <Route path={"/appointment"} exact component={Appoinment} />
         <Route path={"/form"} exact component={FormL} />
         <Route path={"/medicines"} exact component={Medicines} />

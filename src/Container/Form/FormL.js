@@ -8,7 +8,7 @@ function FormL(props) {
   const [usertype, Setusertype] = useState('Login');
   const [password, setpassword] = useState(false);
 
-  let LoginSchema, SignupSchema, PasswordSchema, initVal;
+  let LoginSchema, initVal;
 
   if (usertype == 'Login') {
     LoginSchema = {
@@ -20,7 +20,7 @@ function FormL(props) {
       password: ''
     }
   } else if (usertype == 'Signup') {
-    SignupSchema = {
+    LoginSchema = {
       name: yup.string().required("name is required"),
       email: yup.string().email("Invalid email address format").required("Email is required"),
       password: yup.string().required("Password is required")
@@ -31,14 +31,14 @@ function FormL(props) {
       password: ''
     }
   } else {
-    PasswordSchema =
+    LoginSchema =
       { email: yup.string().email("Invalid email address format").required("Email is required") }
     initVal = {
       email: ''
     }
   }
 
-  let Schema = yup.object().shape(LoginSchema, PasswordSchema, SignupSchema);
+  let Schema = yup.object().shape(LoginSchema);
 
 
   const formikobj = useFormik({
@@ -68,8 +68,8 @@ function FormL(props) {
         </div >
         <Formik values={formikobj}>
           <Form mathod="post" onSubmit={handleSubmit} className="php-email-form">
-            <div >
-              <div className="row contain">
+            <div className='box'>
+              <div className="row justify-content-center">
 
                 {
                   usertype === 'Signup' ?
@@ -93,7 +93,7 @@ function FormL(props) {
                     null
                 }
               </div>
-              <div className="row">
+              <div className="row justify-content-center">
                 <div className="col-md-4 form-group mt-3 mt-md-0">
                   <input
                     type="email"
@@ -112,7 +112,7 @@ function FormL(props) {
                   <div className="validate" />
                 </div>
               </div>
-              <div className="row">
+              <div className="row justify-content-center">
                 {
                   password ?
                     null : <div className="col-md-4 form-group mt-3 mt-md-0">
@@ -126,7 +126,7 @@ function FormL(props) {
                         onBlur={handleBlur}
                       />
                       {errors.password && touched.password ? (
-                        <p>{errors.name}</p>
+                        <p>{errors.password}</p>
                       ) : (
                         ""
                       )}
@@ -134,35 +134,38 @@ function FormL(props) {
                     </div>
                 }
               </div>
-              {
-                usertype === 'Login' && password === false ?
-                  <>
-                    <a
-                      type="submit"
-                      onClick={() => Setusertype('Signup')}>
-                      Create an account ?
-                    </a><br />
-                    <a
-                      type="submit"
-                      onClick={() => setpassword(true)}>
-                      Forgot Password ?
-                    </a>
-                  </>
-                  :
-                  password === true ?
-                    <a
-                      type="submit"
-                      onClick={() => setpassword(false)}>
-                      Remember your password !
-                    </a> :
-                    <a
-                      type="submit"
-                      onClick={() => Setusertype('Login')}>
-                      Already an account ?
-                    </a>
-
-              }
+              <div className='text-align-center'>
+                {
+                  usertype === 'Login' && password === false ?
+                    <>
+                      <a
+                        type="submit"
+                        onClick={() => Setusertype('Signup')}>
+                        Create an account ?
+                      </a><br />
+                      <a
+                        type="submit"
+                        onClick={() => setpassword(true)}>
+                        Forgot Password ?
+                      </a>
+                    </>
+                    :
+                    password === true ?
+                      <a
+                        type="submit"
+                        onClick={() => setpassword(false)}>
+                        Remember your password !
+                      </a>
+                      :
+                      <a
+                        type="submit"
+                        onClick={() => Setusertype('Login')}>
+                        Already an account ?
+                      </a>
+                }
+              </div>
             </div>
+
 
             <div className="row">
               {

@@ -2,14 +2,14 @@ import React from 'react';
 import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from "reactstrap";
 
 
-function List({data}) {
-    const abc = (o)=>{
+function List({ data }) {
+    const abc = (o) => {
         console.log(o.id)
     }
     return (
         <div>
             {
-             data.map((o, i) => {
+                data.map((o, i) => {
                     return (
                         <div key={i}>
                             <Card>
@@ -25,15 +25,15 @@ function List({data}) {
                                     <CardText>
                                         {o.expiry}
                                     </CardText>
-                                    <Button onClick={()=>abc(o)}>
+                                    <Button onClick={() => abc(o)}>
                                         Button
                                     </Button>
                                 </CardBody>
                             </Card>
                         </div>
-                        )
-                    })
-                }
+                    )
+                })
+            }
         </div>
     );
 }
