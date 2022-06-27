@@ -20,8 +20,8 @@ function Doctor(props) {
       src: "../assets/img/doctors/doctors-slide-2.jpg"
     },
     {
-      altText: 'Campain',
-      caption: 'Campain',
+      altText: 'Services',
+      caption: 'Services',
       key: 3,
       src: "../assets/img/doctors/doctors-slide-3.jpg"
     }
