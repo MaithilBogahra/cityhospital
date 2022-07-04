@@ -4,15 +4,16 @@ import * as yup from 'yup';
 
 function Appoinment(props) {
 
+
+
     let schema = yup.object().shape({
         name: yup.string().required(),
         email: yup.string().email().required(),
         phone: yup.number().required().positive().integer(),
         department: yup.string().required(),
         message: yup.string().required(),
-        date: yup.date().required("Enter valid date").default(function () {
-            return new Date().toLocaleDateString();
-        }),
+        date: yup.date().required("Enter valid date")
+       
     });
 
     const formik = useFormik({
@@ -33,6 +34,7 @@ function Appoinment(props) {
     const { errors, handleChange, handleSubmit, handleBlur, touched } = formik;
 
     return (
+
         <section id="appointment" className="appointment">
             <div className="container">
                 <div className="section-title">
