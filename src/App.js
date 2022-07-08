@@ -12,6 +12,7 @@ import Medicines from "./Container/Medicines/Medicines";
 import Appoinment from "./Container/Appoinment/Appoinment";
 import Doctor from "./Container/Doctor/Doctor";
 import Refexample from "./Container/Refexample/RefExample";
+import ListAppoinment from "./Container/Appoinment/ListAppoinment";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path={"/contact"} exact component={Contact} />
         <Route path={"/refexample"} exact component={Refexample} />
         <Route path={"/appointment"} exact component={Appoinment} />
+        <Route path={"/list_appointment"} exact component={ListAppoinment} />
         <Route path={"/form"} exact component={FormL} />
         <Route path={"/medicines"} exact component={Medicines} />
       </Switch>
