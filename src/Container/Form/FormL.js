@@ -40,12 +40,19 @@ function FormL(props) {
 
   let Schema = yup.object().shape(LoginSchema);
 
+  const handleLogin =() => {
+    localStorage.setItem('user', '123');
+  };
 
   const formikobj = useFormik({
     initialValues: initVal,
     validationSchema: Schema,
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      if (usertype === 'Login') {
+        handleLogin();
+      } else {
+        alert(JSON.stringify(values, null, 2));
+      }
     },
   });
 
